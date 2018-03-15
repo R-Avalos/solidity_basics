@@ -29,15 +29,33 @@ Person[] people; = dynamic array titled people, that holds persons
 Public Arrays... declare an array as public and Solidity will create a "getter" method.
 Person[] public people;
 
-Push Items to an arry
+Push Items to an array.    array.push
 Person Bob = Person(42, "Bob"); // create a person entity Bob
-people.push(Bob); // Push Bob entity into the people array.   People.action is the convention
+people.push(Bob); // Push Bob entity into the people array.   array.action is the convention
 or declare in one line:
 people.push(Person(42, "Bob")) 
-
+Items are placed in order of pushed into array
 
 ////////////// Functions
+Functions are PUBLIC by default, which means any other contract can call upon it
+Best to make functions PRIVATE by default, only making them public for specific use cases
+ 		_PrivateFunctions should start with an underscore, by convention
+		name_of_function _(_paramaterA, _parameterB, _parameterC) private {} // declare private
 Function _parameters, as a convention, start with an underscore to seperate them from global variables
 Standard function that takes parameters, does an operation, and provides output
 
+Return Values within function
+string hello_string = "meow"; 
+function test() public returns (string) {
+	return hello_string;
+} // returns hello string 
 
+// View Functions, for when one wants to view data but not modify or add 
+function HelloKittah() public view returns(string) {
+	return hello_string;
+}
+
+// Pure Functions, read nothing from app/contract, simply perform operations on the supplied parameters
+function _multiply(uint a, uint b) private pure returns(uint) {
+	return a * b;
+} // multiplies the supplied a and b parameters together

@@ -21,10 +21,18 @@ contract ZombieFactory {
 	// A dynamic, public array of zombie types
 	Zombie[] public zombies;
 
-// Function
+// Functions
+// Creates a Zombie using the function parameters and pushes into an array
+// Delcare it private so that no outside calls can push to the array
+	function _createZombie(string _name, uint _dna) private {
+	        zombies.push(Zombie(_name, _dna));  
+	}
 
-	function createZombie(string _name, uint _dna){
-	        zombies.push(Zombie(_name, _dna));  // Creates a Zombie using the function parameters and pushes into an array
+// create a function that returns an integer, this will not modify data, simply read only (view)
+	function _generateRandomDna (string _str) private view returns(uint) {
+
 	}
 
 }
+
+
