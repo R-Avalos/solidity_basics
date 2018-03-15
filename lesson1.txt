@@ -1,0 +1,30 @@
+// Crypto zombies lesson 1
+
+// Overview
+// Zombie attributes based on 16 digit integer using modulo operations
+
+// State variables are variables PERMANENTLY stored in the contract on the Ethereum blockchain  (push to database)
+
+// uint = only positive integers (no negative "sing" for unsigned integers). int = can be negative or positive
+
+// Structs
+// Structs allow more complicated data types with multiple properties
+e.g.
+struct Person {
+	uint age;
+	string name;
+	uint stamina;
+	uint charisma;
+	uint strength;
+	uint intelligence;
+}
+
+//////////////  Arrays
+// fixed and dynamic arrays
+uint[2] fixedArray; = array with fixed lenghth of 2 elements
+uint[] dyanmicArray; = array with no fixed length
+One can create an array of structs...
+Person[] people; = dynamic array titled people, that holsds persons
+
+Public Arrays... declar an array as public and Solidity will create a "getter" method.
+Person[] public people;
