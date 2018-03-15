@@ -30,7 +30,8 @@ contract ZombieFactory {
 
 // create a function that returns an integer, this will not modify data, simply read only (view)
 	function _generateRandomDna (string _str) private view returns(uint) {
-
+		uint rand = uint(keccak256(_str));  // create rand uint, type cast hash of _str into uint
+        return rand % dnaModulus;  // return the modulus of rand by dnaModulus
 	}
 
 }

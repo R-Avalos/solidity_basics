@@ -59,3 +59,13 @@ function HelloKittah() public view returns(string) {
 function _multiply(uint a, uint b) private pure returns(uint) {
 	return a * b;
 } // multiplies the supplied a and b parameters together
+
+
+///// Typecasting, converting between data types
+keccak256 is a hash function, but not totally secure random number generation
+
+uint8 a = 5;
+uint b = 6;
+uint8 c = a * b; // errors, because a * b returns uint, not a uint8
+unint8 c = a * uint8(b); // corrects error by chaning type of b from uint to uint8
+
