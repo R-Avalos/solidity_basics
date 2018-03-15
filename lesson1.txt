@@ -24,7 +24,20 @@ struct Person {
 uint[2] fixedArray; = array with fixed lenghth of 2 elements
 uint[] dyanmicArray; = array with no fixed length
 One can create an array of structs...
-Person[] people; = dynamic array titled people, that holsds persons
+Person[] people; = dynamic array titled people, that holds persons
 
-Public Arrays... declar an array as public and Solidity will create a "getter" method.
+Public Arrays... declare an array as public and Solidity will create a "getter" method.
 Person[] public people;
+
+Push Items to an arry
+Person Bob = Person(42, "Bob"); // create a person entity Bob
+people.push(Bob); // Push Bob entity into the people array.   People.action is the convention
+or declare in one line:
+people.push(Person(42, "Bob")) 
+
+
+////////////// Functions
+Function _parameters, as a convention, start with an underscore to seperate them from global variables
+Standard function that takes parameters, does an operation, and provides output
+
+

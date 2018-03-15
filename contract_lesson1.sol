@@ -2,6 +2,7 @@ pragma solidity ^0.4.19; // Declare Solidity version here
 
 // Create contract below 
 
+// Create method to assign attributes to zombie types
 contract ZombieFactory {
 	// create a variable to store on blockchain, uint = unsigned interger == can only be positive (no negative "sign" for unsigned)
 	uint dnaDigits = 16;
@@ -14,4 +15,16 @@ contract ZombieFactory {
 		string name;
 		uint dna;
 	}
+
+// Store Zombie types in an array
+
+	// A dynamic, public array of zombie types
+	Zombie[] public zombies;
+
+// Function
+
+	function createZombie(string _name, uint _dna){
+	        zombies.push(Zombie(_name, _dna));  // Creates a Zombie using the function parameters and pushes into an array
+	}
+
 }
