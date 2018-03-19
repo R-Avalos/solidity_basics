@@ -70,3 +70,21 @@ uint b = 6;
 uint8 c = a * b; // errors, because a * b returns uint, not a uint8
 unint8 c = a * uint8(b); // corrects error by chaning type of b from uint to uint8
 
+
+///////////////// Events 
+// A front end app will listen for an event to do an action. When an event happens within the solidity, it will push information to the app.
+
+//// Solidy event
+// declare the event
+event IntegersAdded(uint x, uint y, uint result);
+
+function add(uint _x, uint _y) public{
+	uint result = _x + _y;  // add x and y, store in result
+	IntegersAdded(_x, _y, result); // fire the event (declared above) to front end 
+	return result; // returns the addition for the function
+}
+
+//// Javascript listener, listening for IntegersAdded event
+YourContract.IntegersAdded(function(error, result) {
+ 	// do something with result
+}

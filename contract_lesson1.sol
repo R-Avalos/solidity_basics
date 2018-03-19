@@ -4,6 +4,10 @@ pragma solidity ^0.4.19; // Declare Solidity version here
 
 // Create method to assign attributes to zombie types
 contract ZombieFactory {
+	// Create events
+	event NewZombie(uint zombieId, string name, uint dna);  // fires event everytime a new zombie is created with id, name, and dna
+
+
 	// create a variable to store on blockchain, uint = unsigned interger == can only be positive (no negative "sign" for unsigned)
 	uint dnaDigits = 16;
 
@@ -25,7 +29,8 @@ contract ZombieFactory {
 // Creates a Zombie using the function parameters and pushes into an array
 // Delcare it private so that no outside calls can push to the array
 	function _createZombie(string _name, uint _dna) private {
-	        zombies.push(Zombie(_name, _dna));  
+        	uint id = zombies.push(Zombie(_name, _dna)) - 1; // get the array number of the zombie that was just pushed, -1 as the array starts at 0
+	        NewZombie(_zombieId, _name, _dna); // fires event for front end listener with each addition to array 
 	}
 
 // create a function that returns an integer, this will not modify data, simply read only (view), for random generation
