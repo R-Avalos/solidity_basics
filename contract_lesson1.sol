@@ -28,11 +28,17 @@ contract ZombieFactory {
 	        zombies.push(Zombie(_name, _dna));  
 	}
 
-// create a function that returns an integer, this will not modify data, simply read only (view)
+// create a function that returns an integer, this will not modify data, simply read only (view), for random generation
 	function _generateRandomDna (string _str) private view returns(uint) {
 		uint rand = uint(keccak256(_str));  // create rand uint, type cast hash of _str into uint
         return rand % dnaModulus;  // return the modulus of rand by dnaModulus
 	}
+// create a function that create a random Zombie, using the random  generator function above
+// note how this a public function, and _beforefunction is removed
+    function createRandomZombie(string _name) public {
+        uint randDna = _generateRandomDna(_name);
+        _createZombie(_name, randDna);
+    }
 
 }
 

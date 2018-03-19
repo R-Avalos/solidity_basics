@@ -40,6 +40,7 @@ Items are placed in order of pushed into array
 Functions are PUBLIC by default, which means any other contract can call upon it
 Best to make functions PRIVATE by default, only making them public for specific use cases
  		_PrivateFunctions should start with an underscore, by convention
+		PublicFunctions do not have an underscore, by convention
 		name_of_function _(_paramaterA, _parameterB, _parameterC) private {} // declare private
 Function _parameters, as a convention, start with an underscore to seperate them from global variables
 Standard function that takes parameters, does an operation, and provides output
