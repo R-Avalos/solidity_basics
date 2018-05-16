@@ -45,3 +45,5 @@ function generateZombie(id, name, dna) {
 	}
 	return zombieDetails
 }
+
+// Hipster Zombie: https://share.cryptozombies.io/en/lesson/1/share/Hipster?id=Z29vZ2xlLW9hdXRoMnwxMDU3NTI0NjQyMDQxNDcwNDcwNjE%3D
