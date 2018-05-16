@@ -88,3 +88,9 @@ function add(uint _x, uint _y) public{
 YourContract.IntegersAdded(function(error, result) {
  	// do something with result
 }
+
+
+
+
+//////////// Web3.js JavaScript Front End ////////////////
+Web3.js is a javascript library for Ethereum
